@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    
+	<head>
+		<meta charset="utf-8">
+		<title>JS演習</title>
+		<style>
+            *{
+                margin:0px;padding:0px;
+                font-size:16px;
+            }
+            
+            /* 2.枠線・外周 */
+            header,main,footer{
+                border:1px solid gray;
+                margin:10px;
+            }
+            
+            #wrap{
+                border:1px solid gray;
+                margin:0px auto;
+                width:400px;
+            }
+            
+            /* 3.文字の大きさ */
+            header h1{font-size:1.2em;}
+            footer small{font-size:0.8em;}
+            
+            /* 4. 背景色 */
+            header{background-color:gray;}
+            footer{background-color:black;}
+            
+            /* 5.文字色 */
+            header h1,
+            footer small{
+                color:white;
+            }
+            
+            /*左右そろえ*/
+            header,footer{text-align:center;}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+
+			<header>
+				<h1>JS演習</h1>
+			</header>
+
+			<main>
+				<p>あなたのきょうの運勢は<span id="result"></span>です。</p>
+			</main>
+
+			<footer>
+				<p><small>(C)2017 shobi.</small></p>
+			</footer>
+			
+			<script>
+            	var n=Math.floor(Math.random()*3);
+
+	            if(n===0){var result="大吉";}
+	            if(n===1){var result="中吉";}
+	            if(n===2){var result="小吉";}
+
+	            document.getElementById("result").innerHTML=result;
+            
+			</script>
+			
+		</div>
+		
+	</body>
+</html>

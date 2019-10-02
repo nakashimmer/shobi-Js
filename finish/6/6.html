@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    
+	<head>
+		<meta charset="utf-8">
+		<title>JS演習</title>
+		<style>
+            *{
+                margin:0px;padding:0px;
+                font-size:16px;
+            }
+            
+            /* 2.枠線・外周 */
+            header,main,footer{
+                border:1px solid gray;
+                margin:10px;
+            }
+            
+            #wrap{
+                border:1px solid gray;
+                margin:0px auto;
+                width:400px;
+            }
+            
+            /* 3.文字の大きさ */
+            header h1{font-size:1.2em;}
+            footer small{font-size:0.8em;}
+            
+            /* 4. 背景色 */
+            header{background-color:gray;}
+            footer{background-color:black;}
+            
+            /* 5.文字色 */
+            header h1,
+            footer small{
+                color:white;
+            }
+            
+            /*左右そろえ*/
+            header,footer{text-align:center;}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+
+			<header>
+				<h1>JS演習</h1>
+			</header>
+
+			<main>
+				<h2>計算機</h2>
+				<p>n1:<input id="n1" type="text"></p>
+				<p>n2:<input id="n2" type="text"></p>
+				
+				<p>
+					<button onclick="btn(1);">＋</button>
+					<button onclick="btn(2);">−</button>
+					<button onclick="btn(3);">×</button>
+					<button onclick="btn(4);">÷</button>
+				</p>
+	
+				<p id="p1">結果を表示</p>
+
+			</main>
+
+			<footer>
+				<p><small>(C)2017 shobi.</small></p>
+			</footer>
+			
+			<script>
+				function btn(i){
+					var n1 = document.getElementById("n1").value; n1=parseFloat(n1);
+					var n2 = document.getElementById("n2").value; n2=parseFloat(n2);
+				
+					if(i===1){document.getElementById("p1").innerHTML = n1+n2;}
+					if(i===2){document.getElementById("p1").innerHTML = n1-n2;}
+					if(i===3){document.getElementById("p1").innerHTML = n1*n2;}
+					if(i===4){document.getElementById("p1").innerHTML = n1/n2;}
+				}
+			</script>
+			
+		</div>
+		
+	</body>
+</html>

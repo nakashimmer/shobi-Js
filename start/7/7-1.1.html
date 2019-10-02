@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS演習</title>
+    <style>
+      *{
+        margin:0px;padding:0px;
+        font-size:16px;
+      }
+            
+      /* 2.枠線・外周 */
+      header,main,footer{
+        border:1px solid gray;
+        margin:10px;
+      }
+            
+      #wrap{
+        border:1px solid gray;
+        margin:0px auto;
+        width:400px;
+      }
+            
+      /* 3.文字の大きさ */
+      header h1{font-size:1.2em;}
+      footer small{font-size:0.8em;}
+            
+      /* 4. 背景色 */
+      header{background-color:gray;}
+      footer{background-color:black;}
+            
+      /* 5.文字色 */
+      header h1,
+      footer small{
+        color:white;
+      }
+            
+      /*左右そろえ*/
+      header,footer{text-align:center;}
+            
+      button{backgrond-color:gray;}
+    </style>
+
+  </head>
+  <body>
+    <div id="wrap">
+      <header>
+        <h1>入力</h1>
+      </header>
+                
+      <main>
+        <p>
+          <button onclick="start()">開始</button>
+          <button onclick="finish()">終了</button>
+        </p>
+        <p id="dif">経過時間</p>
+      </main>
+            
+      <footer>
+        <p><small>(c)2017 shobi.</small></p>
+      </footer>
+    </div>
+        
+    <script>
+           
+      var startTime;//複数の関数内で使用するために関数外で宣言する(グローバル)
+      var dif = document.getElementById("dif");
+           
+      function start(){
+        var now = new Date();
+        startTime = now.getTime();
+        dif.innerHTML = "ストップウォッチ開始";
+      }
+           
+      function finish(){
+        var now = new Date();
+        var finishTime = now.getTime(); //関数内でしか使用しないのなら、関数内で宣言する
+        dif.innerHTML = (finishTime - startTime)/1000 + "秒";
+      }
+           
+    </script>
+  </body>
+</html>

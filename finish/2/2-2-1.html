@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>JS演習</title>
+		<style>
+            *{
+                margin:0px;padding:0px;
+                font-size:16px;
+            }
+            
+            /* 2.枠線・外周 */
+            header,main,footer{
+                border:1px solid gray;
+                margin:10px;
+            }
+            
+            #wrap{
+                border:1px solid gray;
+                margin:0px auto;
+                width:400px;
+            }
+            
+            /* 3.文字の大きさ */
+            header h1{font-size:1.2em;}
+            footer small{font-size:0.8em;}
+            
+            /* 4. 背景色 */
+            header{background-color:gray;}
+            footer{background-color:black;}
+            
+            /* 5.文字色 */
+            header h1,
+            footer small{
+                color:white;
+            }
+            
+            /*左右そろえ*/
+            header,footer{text-align:center;}
+            
+        </style>
+ 
+	</head>
+
+	<body>
+		<div id="wrap">
+
+			<header>
+				<h1>構造の理解</h1>
+			</header>
+
+			<main>
+				<h2>BGM</h2>
+				<p><audio src="audio.mp3" autoplay loop controls></audio></p>
+			</main>
+
+			<footer>
+				<p><small>(C)2017 shobi.</small></p>
+			</footer>
+
+		</div>
+	</body>
+</html>
