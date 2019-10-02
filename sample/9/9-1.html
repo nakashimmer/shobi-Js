@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>JS-2</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+	<p>key：<input id="input1" type="text"></p>
+	<p>value：<input id="input2" type="text"></p>
+	<p>
+		<button onclick="myset();">保存</button>
+		<button onclick="myget();">読出</button>
+		<button onclick="myrmv();">削除</button>
+		<button onclick="myclr();">全削除</button>
+	</p>
+	
+	<script>
+		const INPUT1 = document.getElementById("input1");
+		const INPUT2 = document.getElementById("input2");
+
+		function myset() {
+			localStorage.setItem(INPUT1.value, INPUT2.value);
+		}
+
+		function myget() {
+			INPUT2.value = localStorage.getItem(INPUT1.value);
+		}
+		function myrmv() {
+			localStorage.removeItem(INPUT1.value);
+		}
+		function myclr() {
+			localStorage.clear();
+		}
+	</script>
+	</body>
+
+</html> 

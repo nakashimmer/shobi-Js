@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>JS-2</title>
+		<meta charset="utf-8">
+	</head>
+
+	<body>
+		<p>あなたのきょうの運勢は<span id="output1"></span>です。</p>
+		
+		<script>
+			const SPAN1 = document.getElementById("output1");
+
+			let result;
+			let n = Math.floor(Math.random() * 3);
+			if (n === 0) { result = "大吉"; }
+			if (n === 1) { result = "中吉"; }
+			if (n === 2) { result = "小吉"; }
+
+			SPAN1.innerHTML = result;
+		</script>
+
+	</body>
+
+</html> 

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>JS-3</title>
+	<meta charset="utf-8">
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+		}
+
+		div {
+			border: 1px solid gray;
+			width: 200px;
+			height: 200px;
+			line-height: 200px;
+			margin: 50px auto;
+			text-align: center;
+			transition: all 1s linear;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="box1" onclick="btn1();">サンプル</div>
+
+	<script>
+		const BOX1 = document.getElementById("box1");
+
+		function btn1() {
+			BOX1.style.color = "red";
+			BOX1.style.width = "300px";
+			BOX1.style.height = "250px";
+			BOX1.style.lineHeight = "250px";
+			BOX1.style.backgroundColor = "green";
+			BOX1.style.transform = "rotateZ(360deg)";
+		}
+	</script>
+</body>
+
+</html>
