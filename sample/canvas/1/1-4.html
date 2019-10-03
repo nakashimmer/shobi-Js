@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>1-4</title>
+		<style>
+			#canvas1{border:1px solid gray;}
+		</style>
+	</head>
+
+	<body>
+		<canvas id="canvas1" width="300" height="300"></canvas>
+
+		<script>
+			//要素の取得
+			const canvas1 = document.getElementById("canvas1");
+			const c = canvas1.getContext("2d");
+
+			//★図形を描画
+			//①矩形
+			c.fillStyle = "red";							//塗り色を指定する
+			c.fillRect( 0,  0, 50, 50);				//矩形を描画(x座標,y座標,幅,高さ)
+			c.fillRect(50, 50, 50, 50);				//矩形を描画(x座標,y座標,幅,高さ)
+
+			//②多角形
+			c.beginPath();										//パスの開始
+			c.moveTo(150,   0);							//開始点を設定(x,y)
+			c.lineTo(100, 100);							//頂点を設定(x,y)
+			c.lineTo(200, 100);							//頂点を設定(x,y)
+			c.closePath();										//パスの終了(開始点へ戻る)
+			c.fillStyle = "orange";
+			c.fill();												//パス内を塗りつぶす
+			
+			//③直線
+			c.beginPath();
+			c.moveTo(200,   0);
+			c.lineTo(300, 100);
+			c.lineWidth = 3;									//枠線の太さ
+			c.strokeStyle = "yellow";					//枠線のいろ
+			c.stroke();											//パスに枠線を引く
+	
+		</script>	
+	</body>
+</html>
