@@ -1,1 +1,63 @@
-尚美学園大学
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            *{font-size:30px;margin:0;}
+            #wrap{width:320px;margin:1em auto;}
+            input{width:calc(100% - 3em);text-align:right;padding:0.5em;}
+            button{width:2em;height:2em;text-align: center;line-height:2em;margin:0.5em;border-radius:50%;
+            border:1px solid gray;box-shadow:5px 5px 5px gray;}
+            #n3{background-color: #aaa;text-align:right;padding:0.5em;}
+        </style>
+    </head>
+    <body>
+        <div id="wrap">
+        <p>
+            n1:<input type="text" id="i1"><br>
+            n2:<input type="text" id="i2">
+        </p>
+        <p>
+            <button onclick="btn1('7');">7</button>
+            <button onclick="btn1('8');">8</button>
+            <button onclick="btn1('9');">9</button><br>
+
+            <button onclick="btn1('4');">4</button>
+            <button onclick="btn1('5');">5</button>
+            <button onclick="btn1('6');">6</button><br>
+    
+            <button onclick="btn1('1');">1</button>
+            <button onclick="btn1('2');">2</button>
+            <button onclick="btn1('3');">3</button><br>
+            <button onclick="btn1('0');">0</button>
+            <button onclick="op='+';ord=2;">+</button>
+            <button onclick="op='-';ord=2;">-</button><br>
+            <button onclick="op='*';ord=2;">x</button>
+            <button onclick="op='/';ord=2;">÷</button>
+            <button onclick="btn3();">=</button>
+        </p>
+        <p id="n3">結果</p>
+        </div>
+
+        <script>
+            const i1=document.getElementById("i1");
+            const i2=document.getElementById("i2");
+            let op="";
+            let n1="";
+            let n2="";
+            let ord=1;
+            const n3=document.getElementById("n3");
+
+            function btn1(i){
+                if(ord===1){n1 += i;i1.value=n1;}
+                else{n2 += i;i2.value=n2;}
+            }
+
+            function btn3(i){
+                if(op==="+"){n3.innerHTML=Number(n1)+Number(n2);}
+                if(op==="-"){n3.innerHTML=Number(n1)-Number(n2);}
+                if(op==="*"){n3.innerHTML=Number(n1)*Number(n2);}
+                if(op==="/"){n3.innerHTML=Number(n1)/Number(n2);}
+            }
+        </script>
+    </body>
+</html>
