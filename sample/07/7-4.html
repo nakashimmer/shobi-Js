@@ -16,7 +16,7 @@
 		<p id="output1">じゃんけん・・・</p>
 		
 		<script>
-			const OUTPUT1 = document.getElementById("output1");
+			const output1 = document.getElementById("output1");
 
 			//得点
 			let point = 0;
@@ -48,7 +48,7 @@
 				}
 
 				//ページに表示
-				OUTPUT1.innerHTML
+				output1.innerHTML
 					= "<p>PCは" + pc + "</p>" + "<p>あなたは" + player + "</p>" + "<p>" + judge
 					+ "</p>" + "<p>得点" + point + "</p>";
 			}

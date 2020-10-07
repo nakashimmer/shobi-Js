@@ -11,7 +11,7 @@
 		<p id="output1">日付情報</p>
 		
 		<script>
-			const OUTPUT1 = document.getElementById("output1");
+			const output1 = document.getElementById("output1");
 
 			const now = new Date();
 			let y = now.getFullYear();
@@ -23,7 +23,7 @@
 			let s = now.getSeconds();
 			const week = new Array("日", "月", "火", "水", "木", "金", "土");
 
-			OUTPUT1.innerHTML = y + "年" + m + "月" + d + "日" + week[w] + "曜日" + h + "時" + i + "分" + s + "秒";
+			output1.innerHTML = y + "年" + m + "月" + d + "日" + week[w] + "曜日" + h + "時" + i + "分" + s + "秒";
 		</script>
 	</body>
 
