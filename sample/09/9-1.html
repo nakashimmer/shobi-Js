@@ -18,18 +18,18 @@
 	</p>
 	
 	<script>
-		const INPUT1 = document.getElementById("input1");
-		const INPUT2 = document.getElementById("input2");
+		const input1 = document.getElementById("input1");
+		const input2 = document.getElementById("input2");
 
 		function myset() {
-			localStorage.setItem(INPUT1.value, INPUT2.value);
+			localStorage.setItem(input1.value, input2.value);
 		}
 
 		function myget() {
-			INPUT2.value = localStorage.getItem(INPUT1.value);
+			input2.value = localStorage.getItem(input1.value);
 		}
 		function myrmv() {
-			localStorage.removeItem(INPUT1.value);
+			localStorage.removeItem(input1.value);
 		}
 		function myclr() {
 			localStorage.clear();

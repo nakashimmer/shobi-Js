@@ -22,18 +22,18 @@
 		<div id="box1"></div>
 		
 		<script>
-			const BOX1 = document.getElementById("box1");
+			const box1 = document.getElementById("box1");
 
 			//イベント設定（〜したら〜する）
-			BOX1.addEventListener("mousemove", move1);
+			box1.addEventListener("mousemove", move1);
 
 			//関数設定
 			function move1(e) {
 				let x = e.clientX;
 				let y = e.clientY;
 
-				BOX1.style.transform = "translate("+ (x-10)+"px,"+(y - 10) + "px)";
-				BOX1.innerHTML = "x=" + x + "px/y=" + y + "px";
+				box1.style.transform = "translate("+ (x-10)+"px,"+(y - 10) + "px)";
+				box1.innerHTML = "x=" + x + "px/y=" + y + "px";
 			}
 
 	</script>
