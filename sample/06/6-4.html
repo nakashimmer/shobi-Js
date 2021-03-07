@@ -1,36 +1,36 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>6-4</title>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>6-4</title>
+</head>
 
 
-	<body>
-		<!-- ②HTMLの記述場所 -->
-		<p>
-			<button onclick="start1();">Start</button>
-			<button onclick="finish1();">Finish</button>
-		</p>
-		<p id="time1">経過時間は...</p>
-		<script>
-			//③JavaScriptの記述場所
-			const time1 = document.getElementById("time1");
-			let startTime;
+<body>
+	<!-- ②HTMLの記述場所 -->
+	<p>
+		<button onclick="start1();">Start</button>
+		<button onclick="finish1();">Finish</button>
+	</p>
+	<p id="time1">経過時間は...</p>
+	<script>
+		//③JavaScriptの記述場所
+		const time1 = document.getElementById("time1");
+		let startTime;
 
-			function start1() {
-				const now = new Date();
-				startTime = now.getTime();
-			}
+		function start1() {
+			const now = new Date();
+			startTime = now.getTime();
+		}
 
-			function finish1() {
-				const now = new Date();
-				let finishTime = now.getTime();
-				time1.innerHTML = "経過時間は" + (finishTime - startTime) / 1000 + "秒";
-			}
-		</script>
+		function finish1() {
+			const now = new Date();
+			let finishTime = now.getTime();
+			time1.innerHTML = "経過時間は" + (finishTime - startTime) / 1000 + "秒";
+		}
+	</script>
 
-	</body>
+</body>
 
 </html>

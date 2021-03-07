@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>15-3</title>
-		<style>
-			#canvas1{
-				border:1px solid gray;
-				background-image:url(bg1.png);		/*背景画像*/
-			}
-		</style>
-	</head>
 
-	<body>
-		<canvas id="canvas1" width="400" height="400"></canvas>
-		<audio src="audio1.mp3" id="audio1"></audio>
+<head>
+	<meta charset="utf-8">
+	<title>15-3</title>
+	<style>
+		#canvas1 {
+			border: 1px solid gray;
+			background-image: url(bg1.png);
+			/*背景画像*/
+		}
+	</style>
+</head>
 
-		<script>
-			const canvas1 = document.getElementById("canvas1");
-			const c = canvas1.getContext("2d");
+<body>
+	<canvas id="canvas1" width="400" height="400"></canvas>
+	<audio src="audio1.mp3" id="audio1"></audio>
 
-			//効果音取り込み
-			const audio1 = document.getElementById("audio1");
+	<script>
+		const canvas1 = document.getElementById("canvas1");
+		const c = canvas1.getContext("2d");
 
-			//初期化
+		//効果音取り込み
+		const audio1 = document.getElementById("audio1");
 
-			//実行
-			setInterval(loop, 50);
+		//初期化
 
-			function loop(){
+		//実行
+		setInterval(loop, 50);
 
-				//①消去----------------------
-				c.clearRect(0, 0, canvas1.width, canvas1.height);
+		function loop() {
 
-				//②描画----------------------
+			//①消去----------------------
+			c.clearRect(0, 0, canvas1.width, canvas1.height);
 
-				//ポイント
+			//②描画----------------------
 
-				//③計算---------------
+			//ポイント
 
-				//壁衝突計算
+			//③計算---------------
 
-				//ポイントゲット
+			//壁衝突計算
 
-			}
+			//ポイントゲット
 
-			//矩形の定義
-			function rectDraw(obj){
-				c.save();
-				c.translate(obj.x, obj.y);
-				c.rotate(obj.angle / 180 * Math.PI);
-				c.scale(obj.scaleX, obj.scaleY);
+		}
 
-				c.fillStyle = obj.color;
-				c.fillRect(0-obj.w/2, 0-obj.h/2, obj.w, obj.h);
+		//矩形の定義
+		function rectDraw(obj) {
+			c.save();
+			c.translate(obj.x, obj.y);
+			c.rotate(obj.angle / 180 * Math.PI);
+			c.scale(obj.scaleX, obj.scaleY);
 
-				c.restore();
-			}
-		</script>
-	</body>
+			c.fillStyle = obj.color;
+			c.fillRect(0 - obj.w / 2, 0 - obj.h / 2, obj.w, obj.h);
+
+			c.restore();
+		}
+	</script>
+</body>
+
 </html>

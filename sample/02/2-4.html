@@ -14,7 +14,7 @@
 			border: 1px solid red;
 			width: 200px;
 			height: 200px;
-			margin:0 auto;
+			margin: 0 auto;
 		}
 
 		#box1 {
@@ -22,15 +22,20 @@
 		}
 
 		/*ここから下に記述*/
-		#box1{
-			animation:mystory 5s linear 0s 1 normal;
-			animation-fill-mode:both;
-		}
-		@keyframes mystory{
-			0%{   transform:translateX(-300px);}
-			100%{ transform:translateX( 300px);}
+		#box1 {
+			animation: mystory 5s linear 0s 1 normal;
+			animation-fill-mode: both;
 		}
 
+		@keyframes mystory {
+			0% {
+				transform: translateX(-300px);
+			}
+
+			100% {
+				transform: translateX(300px);
+			}
+		}
 	</style>
 </head>
 

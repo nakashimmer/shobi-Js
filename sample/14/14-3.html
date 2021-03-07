@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>14-3</title>
-		<style>
-			#canvas1{background-color:skyblue;}
-		</style>
-	</head>
 
-	<body>
-		<canvas id="canvas1" width="300" height="300"></canvas>
+<head>
+	<meta charset="utf-8">
+	<title>14-3</title>
+	<style>
+		#canvas1 {
+			background-color: skyblue;
+		}
+	</style>
+</head>
 
-		<script>
-			const canvas1 = document.getElementById("canvas1");
-			const c = canvas1.getContext("2d");
+<body>
+	<canvas id="canvas1" width="300" height="300"></canvas>
 
-			//矩形の初期化
-			const rect1 = {
-				x:100, y:100, w:50, h:50, color:"indigo",
-				angle:0, scaleX:1, scaleY:1,
-				dx:1, dy:1
-			};
+	<script>
+		const canvas1 = document.getElementById("canvas1");
+		const c = canvas1.getContext("2d");
 
-			//矩形の実行
-			setInterval(loop, 50);				//タイマ(関数名,ミリ秒)
+		//矩形の初期化
+		const rect1 = {
+			x: 100, y: 100, w: 50, h: 50, color: "indigo",
+			angle: 0, scaleX: 1, scaleY: 1,
+			dx: 1, dy: 1
+		};
 
-			function loop(){
-				rectDraw(rect1);
-			}
+		//矩形の実行
+		setInterval(loop, 50);				//タイマ(関数名,ミリ秒)
 
-			//定義部分だけライブラリ化を意識して別script要素内に移動しました。
-			//矩形の定義
-			function rectDraw(obj){
-				c.save();
-				c.translate(obj.x, obj.y);
-				c.rotate(obj.angle / 180 * Math.PI);
-				c.scale(obj.scaleX, obj.scaleY);
+		function loop() {
+			rectDraw(rect1);
+		}
 
-				c.fillStyle = obj.color;
-				c.fillRect(0-obj.w/2, 0-obj.h/2, obj.w, obj.h);
+		//定義部分だけライブラリ化を意識して別script要素内に移動しました。
+		//矩形の定義
+		function rectDraw(obj) {
+			c.save();
+			c.translate(obj.x, obj.y);
+			c.rotate(obj.angle / 180 * Math.PI);
+			c.scale(obj.scaleX, obj.scaleY);
 
-				c.restore();
-			}
-		</script>
-	</body>
+			c.fillStyle = obj.color;
+			c.fillRect(0 - obj.w / 2, 0 - obj.h / 2, obj.w, obj.h);
+
+			c.restore();
+		}
+	</script>
+</body>
+
 </html>

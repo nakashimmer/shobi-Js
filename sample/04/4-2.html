@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>4-2</title>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>4-2</title>
+</head>
 
 
-	<body>
-		<input type="text" id="input1">
-		<button onclick="btn1();">ボタン１</button>
-		<p id="output1">結果</p>
-		
-		<script>
-			const input1 = document.getElementById("input1");
-			const output1 = document.getElementById("output1");
+<body>
+	<input type="text" id="input1">
+	<button onclick="btn1();">ボタン１</button>
+	<p id="output1">結果</p>
 
-			let n1 = 50;
-			function btn1() {
-				if (Number(input1.value) === n1) {
-					output1.innerHTML = "正解";
-				} else {
-					output1.innerHTML = "残念";
-				}
+	<script>
+		const input1 = document.getElementById("input1");
+		const output1 = document.getElementById("output1");
+
+		let n1 = 50;
+		function btn1() {
+			if (Number(input1.value) === n1) {
+				output1.innerHTML = "正解";
+			} else {
+				output1.innerHTML = "残念";
 			}
-		</script>
-	</body>
+		}
+	</script>
+</body>
 
 </html>

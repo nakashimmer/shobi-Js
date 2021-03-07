@@ -1,70 +1,74 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>14-5</title>
-		<style>
-			#canvas1{background-color:skyblue;}
-		</style>
-	</head>
 
-	<body>
-		<canvas id="canvas1" width="300" height="300"></canvas>
+<head>
+	<meta charset="utf-8">
+	<title>14-5</title>
+	<style>
+		#canvas1 {
+			background-color: skyblue;
+		}
+	</style>
+</head>
 
-		<script>
-			const canvas1 = document.getElementById("canvas1");
-			const c = canvas1.getContext("2d");
+<body>
+	<canvas id="canvas1" width="300" height="300"></canvas>
 
-			//矩形の初期化
-			const rect1 = {
-				x:100, y:100, w:50, h:50, color:"indigo",
- 				angle:0, scaleX:1, scaleY:1,
-				dx:1, dy:1
-			};
+	<script>
+		const canvas1 = document.getElementById("canvas1");
+		const c = canvas1.getContext("2d");
 
-			//矩形の実行
-			setInterval(loop, 50);				//タイマ(関数名,ミリ秒)
+		//矩形の初期化
+		const rect1 = {
+			x: 100, y: 100, w: 50, h: 50, color: "indigo",
+			angle: 0, scaleX: 1, scaleY: 1,
+			dx: 1, dy: 1
+		};
 
-			function loop(){
+		//矩形の実行
+		setInterval(loop, 50);				//タイマ(関数名,ミリ秒)
 
-				//①消去----------------------
-				c.clearRect(0, 0, canvas1.width, canvas1.height);
+		function loop() {
 
-				//②描画----------------------
-				rectDraw(rect1);
+			//①消去----------------------
+			c.clearRect(0, 0, canvas1.width, canvas1.height);
 
-				//③計算---------------
-		 		rectCal(rect1);
+			//②描画----------------------
+			rectDraw(rect1);
+
+			//③計算---------------
+			rectCal(rect1);
+		}
+
+		function rectCal(obj) {
+			obj.x += obj.dx; obj.y += obj.dy;
+			if (
+				(obj.x < obj.w / 2) || (canvas1.width - obj.w / 2 < obj.x)
+			) {
+				obj.dx *= -1;
 			}
-
-			function rectCal(obj) {
-				obj.x += obj.dx; obj.y += obj.dy;
-				if (
-					(obj.x < obj.w / 2) || (canvas1.width - obj.w / 2 < obj.x)
-				) {
-					obj.dx *= -1;
-				}
-				if (
-					(obj.y < obj.h / 2) || (canvas1.height - rect1.h / 2 < obj.y)
-				) {
-					obj.dy *= -1;
-				}
+			if (
+				(obj.y < obj.h / 2) || (canvas1.height - rect1.h / 2 < obj.y)
+			) {
+				obj.dy *= -1;
 			}
+		}
 
-			//矩形の定義
-			function rectDraw(obj){
-				c.save();
-				c.translate(obj.x, obj.y);
-				c.rotate(obj.angle / 180 * Math.PI);
-				c.scale(obj.scaleX, obj.scaleY);
+		//矩形の定義
+		function rectDraw(obj) {
+			c.save();
+			c.translate(obj.x, obj.y);
+			c.rotate(obj.angle / 180 * Math.PI);
+			c.scale(obj.scaleX, obj.scaleY);
 
-				c.fillStyle = obj.color;
-				c.fillRect(0-obj.w/2, 0-obj.h/2, obj.w, obj.h);
+			c.fillStyle = obj.color;
+			c.fillRect(0 - obj.w / 2, 0 - obj.h / 2, obj.w, obj.h);
 
-				c.restore();
-			}
+			c.restore();
+		}
 
 
-		</script>
-	</body>
+	</script>
+</body>
+
 </html>

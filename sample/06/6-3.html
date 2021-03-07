@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="utf-8">
-		<title>6-3</title>
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>6-3</title>
+</head>
 
 
-	<body>
-		<p id="output1">日付情報</p>
-		
-		<script>
-			const output1 = document.getElementById("output1");
+<body>
+	<p id="output1">日付情報</p>
 
-			setInterval(clock, 1000);
-			function clock() {
-				const now = new Date();
-				let y = now.getFullYear();
-				let m = now.getMonth() + 1;
-				let d = now.getDate();
-				let w = now.getDay();
-				let h = now.getHours();
-				let i = now.getMinutes();
-				let s = now.getSeconds();
-				const week = new Array("日", "月", "火", "水", "木", "金", "土");
+	<script>
+		const output1 = document.getElementById("output1");
 
-				output1.innerHTML = y + "年" + m + "月" + d + "日" + week[w] + "曜日" + h + "時" + i + "分" + s + "秒";
-			}
-		</script>
-	</body>
+		setInterval(clock, 1000);
+		function clock() {
+			const now = new Date();
+			let y = now.getFullYear();
+			let m = now.getMonth() + 1;
+			let d = now.getDate();
+			let w = now.getDay();
+			let h = now.getHours();
+			let i = now.getMinutes();
+			let s = now.getSeconds();
+			const week = new Array("日", "月", "火", "水", "木", "金", "土");
+
+			output1.innerHTML = y + "年" + m + "月" + d + "日" + week[w] + "曜日" + h + "時" + i + "分" + s + "秒";
+		}
+	</script>
+</body>
 
 </html>

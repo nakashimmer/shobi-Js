@@ -19,22 +19,22 @@
 </head>
 
 <body>
-		<div id="box1"></div>
-		
-		<script>
-			const box1 = document.getElementById("box1");
+	<div id="box1"></div>
 
-			//イベント設定（〜したら〜する）
-			box1.addEventListener("mousemove", move1);
+	<script>
+		const box1 = document.getElementById("box1");
 
-			//関数設定
-			function move1(e) {
-				let x = e.clientX;
-				let y = e.clientY;
+		//イベント設定（〜したら〜する）
+		box1.addEventListener("mousemove", move1);
 
-				box1.style.transform = "translate("+ (x-10)+"px,"+(y - 10) + "px)";
-				box1.innerHTML = "x=" + x + "px/y=" + y + "px";
-			}
+		//関数設定
+		function move1(e) {
+			let x = e.clientX;
+			let y = e.clientY;
+
+			box1.style.transform = "translate(" + (x - 10) + "px," + (y - 10) + "px)";
+			box1.innerHTML = "x=" + x + "px/y=" + y + "px";
+		}
 
 	</script>
 </body>
